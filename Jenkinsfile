@@ -25,7 +25,7 @@ pipeline{
                    steps{
                         script{
                             sh "lw-scanner evaluate jeffthorne/books latest --data-directory /home/jeff/lw_data"
-                            sh "/home/jeff/.local/bin/lwh opa --url https://192.168.1.192:8443 --input \$(ls -t /home/jeff/lw_data/evaluations/jeffthorne/books/latest  | awk '{printf(\"/home/jeff/lw_data/evaluations/jeffthorne/books/latest/%s\",\$0);exit}') --output /home/jeff/lw_data/lacework_imageassurance.html"
+                            sh "/home/jeff/.local/bin/lwh report --input \$(ls -t /home/jeff/lw_data/evaluations/jeffthorne/books/latest  | awk '{printf(\"/home/jeff/lw_data/evaluations/jeffthorne/books/latest/%s\",\$0);exit}') --output /home/jeff/lw_data/lacework_imageassurance.html"
                             sh "sleep 10"
 
                         }
