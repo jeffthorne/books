@@ -56,8 +56,8 @@ pipeline{
 
                 stage('Deploy to k8s'){
                     steps{
-                        sh "kubectl  delete -f  jeffsbooks-deployment.yaml -n jeffsbooks"
-                        sh "kubectl  apply -f jeffsbooks-deployment.yaml -n jeffsbooks"
+                        sh "kubectl  --kubeconfig=/home/jeff/config.yaml delete -f  jeffsbooks-deployment.yaml -n jeffsbooks"
+                        sh "kubectl  --kubeconfig=/home/jeff/config.yaml apply -f jeffsbooks-deployment.yaml -n jeffsbooks"
 
                      }
                 }
