@@ -1,4 +1,4 @@
-FROM tiangolo/uwsgi-nginx-flask:latest
+FROM jeffthorne/python:3.7-slim
 MAINTAINER Jeff Thorne
 
 ENV FLASK_APP=flasky.py
