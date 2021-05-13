@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}welcome to jeffsonlinebooks.com{% endblock %}
+
+{% block page_content %}
+<div class="row">
+<div class="col-md-12" style="padding-top: 30px;">
+
+<div style="margin-top: 40px"><img src="{{ url_for('static', filename='images/oldseattle.jpg') }}" width="150" height="150"><br>
+<span style="font-size: 12px">Old picture proves we were here first.</span> </div>
+
+<div style="font-size:22px; font-weight: bold;">We Specialize in Vintage Progamming Text Books</div>
+
+<p style="margin-top: 40px; font-size: 18px">We offer a huge selection of books with over 23 titles focusing on Fortan, Visual Basic, Object Pascal, and many others (20 to be exact).</p>
+
+<div style="margin-top: 60px"><img src="{{ url_for('static', filename='images/fortran.jpg') }}" width="350" height="350">
+<img src="{{ url_for('static', filename='images/pascal2.jpg') }}" width="250" height="250"></div>
+
+
+</div><!-- end col -->
+</div><!-- end row -->
+
+{% endblock %}

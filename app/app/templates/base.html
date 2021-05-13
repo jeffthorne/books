@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% assets "css_all" %}<link rel="stylesheet" href="{{ ASSET_URL }}">{% endassets %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<title>Jeff's Online Books</title>
+</head>
+<body style="background-color: #CECECE;">
+
+<div class="container text-center">
+<div class="row">
+<div class="col-md-12" style="padding-top: 30px;">
+
+
+<div style="font-size:26px; font-weight: bold;">Welcome to Jeff's Online Books. Seatttttle's First (I did have the idea) Online book store.</div>
+
+<a href="{{ url_for('main.index') }}">home</a>  |  <a href="{{ url_for('main.upload') }}">upload book info</a>  |  <a href="{{ url_for('main.books') }}">books</a> |
+    <a href="{{ url_for('main.contact') }}">contact</a> | <a href="{{ url_for('main.login') }}">admin login</a> |
+    <a href="{{ url_for('main.make_noise') }}">network</a>
+
+</div><!-- end col-md12 -->
+</div><!-- end row -->
+
+{% block content %}
+    {% block page_content %}{% endblock %}
+{% endblock %}
+<br/><br/>
+
+
+<div class="row text-center">
+<div class="col-md-12" style="padding-top: 30px;">
+<div style="margin-top: 15px;">©1993-2018, jeffsonlinebooks2.com, Inc. and or its future affiliates</div>
+</div>
+</div>
+
+</div><!-- end container -->
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% assets "css_all" %}<link rel="stylesheet" href="{{ ASSET_URL }}">{% endassets %}
+{% assets "js_all" %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Miriam+Libre:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<title>Kristof's Donuts and Burgers</title>
+</head>
+<body>
+
+
+
+{% block content %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-12" style="padding-top: 45px;">
+            <div style="font-size:46px; font-weight: bold;">Welcome to Kristof's Donut's and Burgers</div>
+
+<a href="/">home</a>  |  <a href="upload">upload recipe</a>  |  <a href="login">baker login</a>
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 40px;">
+            <div style="color: green;"> {{ fl }}</div>
+
+
+            <h3 style="margin-top: 40px;">The Secret Jersey Big Boy Donut Recipie</h3>
+            <table style="margin-top: 20px;">
+
+               <tr>
+                   <td style="font-weight: bold;" width="250px;" align="left">Quanitity</td>
+                   <td style="font-weight: bold;" align="left">Ingredient</td>
+               </tr>
+
+
+                <tr>
+                    <td align="left">5 cups</td>
+                    <td align="left">Wholesome Organic Buttery Butter</td>
+                </tr>
+                  <tr>
+                    <td align="left">16</td>
+                    <td align="left">Stacey Malcom Farms Eggs</td>
+                </tr>
+                  <tr>
+                    <td align="left">17 cups</td>
+                    <td align="left">Hawaian Coconut scented sugar</td>
+                </tr>
+                   <tr>
+                    <td align="left">2 cups</td>
+                    <td align="left">Hersey coated sprinkles</td>
+                </tr>
+                  <tr>
+                    <td align="left">1.5 cups</td>
+                    <td align="left">Moms own icing recipe</td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+    {% block page_content %}{% endblock %}
+    </div>
+
+{% endblock %}
+
+</body>
+</html>

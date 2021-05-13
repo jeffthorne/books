@@ -1,0 +1,19 @@
+js_all:
+    contents:
+        - js/jquery-3.1.0.js
+        - js/jquery-ui.js
+        - js/redactor.js
+        - js/bootstrap.js
+        - js/moment.min.js
+        - js/underscore-min.js
+        - js/lodash.js
+        - js/moment.js
+        - js/vue_sortable.js
+        - js/vue.js
+        - js/vue-resource.min.js
+        - js/vuex.min.js
+        - js/vuedraggable.js
+        - js/vue_app/todo_counter.js
+        - js/vue-cookies.js
+
+

@@ -1,0 +1,9 @@
+Flask==0.12.4
+Flask-Assets==0.12
+#boto3==1.9.113
+flask-sqlalchemy
+psycopg2-binary
+Flask-Bootstrap4
+Flask-Migrate
+requests==2.21.0
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}welcome to jeffsonlinebooks.com{% endblock %}
+
+{% block page_content %}
+<div class="row">
+<div class="col-md-12" style="padding-top: 45px;">
+
+<div style="font-size: 30px;">Book Inventory</div>
+
+    <table>
+        <tr>
+            <td><img src="{{ url_for('static', filename='images/pascal2.jpg') }}" width="250" height="250"></td>
+            <td style="margin-left: 20px;"><b>Turbo Pascal 7: The Complete Reference</b><br/>
+                <p>Details the newest features of version 7 with extensive examples, includes Windows functions coverage,<br/>
+                    how to write in DOS, and instructs in the concepts and practice of object-oriented programming</p><br/>
+                Reviews: 1 5/5 *****<br/>
+                <a href="https://www.amazon.com/Turbo-Pascal-7-Complete-Reference/dp/0078817935/ref=sr_1_1?s=books&ie=UTF8&qid=1528547761&sr=1-1&keywords=turbo+pascal">Order</a>
+            </td>
+        </tr>
+    </table>
+
+               <a href="#" style="font-size: 20px; font-weight: bold">More Books Click here - Cool React component</a>
+
+
+
+</div><!-- end col -->
+</div><!-- end row -->
+
+{% endblock %}

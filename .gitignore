@@ -1,0 +1,16 @@
+.DS_Store
+.Python
+.idea/
+.cache/
+.vagrant
+deploy/
+jenkins
+__pycache__/
+*.log
+venv/
+aqua.dmp
+aqua42.dmp
+aqua42_audit.dmp
+aqua100.sql
+aqua100.sql
+turnkey_postgres_iamge.tar
