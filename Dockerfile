@@ -9,21 +9,21 @@ EXPOSE 8088
 ENTRYPOINT ["flask"]
 CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
-RUN apt-get update
-#RUN apt-get install -y inetutils-ping
+#RUN apt-get update
+
 
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-COPY app/requirements.txt /
-RUN pip install -r /requirements.txt
+#COPY app/requirements.txt /
+##RUN pip install -r /requirements.txt
 COPY app /app
-#COPY PyYAML-3.12.tar.gz /
 
-RUN pip install PyYAML==5.1b5
+
+#RUN pip install PyYAML==5.1b5
 #RUN pip install PyYAML==3.12
-COPY base.html /app/app/templates/
+#COPY base.html /app/app/templates/
 
 
 
