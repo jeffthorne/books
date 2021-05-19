@@ -24,7 +24,7 @@ pipeline{
                 stage('Lacework Image Assurance Scan'){
                    steps{
                         script{
-                            sh "lw-scanner image --opa-server https://35.232.5.68:8443 --format template --template \"@/home/jeff/lace.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
+                            sh "lw-zeus image --opa-server https://35.232.5.68:8443 --format template --template \"@/home/jeff/lace.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
 
                         }
                     }
