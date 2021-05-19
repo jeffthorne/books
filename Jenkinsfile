@@ -21,12 +21,10 @@ pipeline{
         }
 
 
-               stage('Lacework Image Assurance Scan'){
+                stage('Lacework Image Assurance Scan'){
                    steps{
                         script{
-                            sh "lw-scanner evaluate jeffthorne/books latest --data-directory /home/jeff/lw_data"
-                            sh "/home/jeff/.local/bin/lwh opa --url https://35.232.5.68:8443 --input \$(ls -t /home/jeff/lw_data/evaluations/jeffthorne/books/latest  | awk '{printf(\"/home/jeff/lw_data/evaluations/jeffthorne/books/latest/%s\",\$0);exit}') --output /home/jeff/lw_data/lacework_imageassurance.html"
-                            sh "sleep 10"
+                            sh "lw-scanner image --opa-server https://35.232.5.68:8443 --format template --template \"@/home/jeff/lace.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
 
                         }
                     }
@@ -37,7 +35,7 @@ pipeline{
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
                             reportDir: '/home/jeff/lw_data',
-                            reportFiles: 'lacework_imageassurance.html',
+                            reportFiles: 'lace.html',
                             reportName: 'LaceworkScannerReport'
                          ]
                     }
