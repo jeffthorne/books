@@ -1,4 +1,4 @@
-FROM jeffthorne/python:3.7-slim
+FROM python:3.9.5
 MAINTAINER Jeff Thorne
 
 ENV FLASK_APP=flasky.py
@@ -15,15 +15,15 @@ CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
-
-#COPY app/requirements.txt /
-##RUN pip install -r /requirements.txt
+RUN pip install pipenv
+COPY Pipfile /
+RUN pipenv install
 COPY app /app
 
 
 #RUN pip install PyYAML==5.1b5
 #RUN pip install PyYAML==3.12
-#COPY base.html /app/app/templates/
+COPY base.html /app/app/templates/
 
 
 
