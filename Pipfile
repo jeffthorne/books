@@ -4,10 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-netifaces = "==0.10.6"
 gunicorn = "==19.7.1"
-sqreen = "==1.13.4"
-boto3 = "*"
 requests = "*"
 Flask = "==0.12"
 PyYAML = "==4.2b4"
@@ -15,4 +12,4 @@ PyYAML = "==4.2b4"
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.7"
