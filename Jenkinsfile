@@ -24,7 +24,7 @@ pipeline{
                 stage('Ghost Image Assurance Scan'){
                    steps{
                         script{
-                            sh "ghost image --opa-server https://35.193.187.142:8443 --format template --template \"@/home/jeff/experian.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
+                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@/home/jeff/experian.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
 
                         }
                     }
