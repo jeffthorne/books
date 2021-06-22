@@ -15,8 +15,8 @@ pipeline{
           stage('Build Docker Image'){
             steps{
                 sh "docker build -t jeffthorne/books:v12 ."
-                sh "sleep 4"
-                sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
+                //sh "sleep 4"
+                //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
             }
         }
 
@@ -24,7 +24,7 @@ pipeline{
                 stage('Lacework Image Assurance Scan'){
                    steps{
                         script{
-                            sh "ghost image --opa-server https://35.193.187.142:8443 --format template --template \"@/home/jeff/lace.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:v12"
+                            sh "ghost image --opa-server https://35.193.187.142:8443 --format template --template \"@/home/jeff/experian.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:v12"
 
                         }
                     }
