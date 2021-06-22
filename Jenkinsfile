@@ -24,7 +24,7 @@ pipeline{
                 stage('Ghost Image Assurance Scan'){
                    steps{
                         script{
-                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@/home/jeff/experian.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
+                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@/home/jeff/lace.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
 
                         }
                     }
@@ -36,7 +36,7 @@ pipeline{
                             keepAll: true,
                             reportDir: '/home/jeff/lw_data',
                             reportFiles: 'lace.html',
-                            reportName: 'GhostScannerReport'
+                            reportName: 'LaceScannerReport'
                          ]
                     }
                 }
@@ -54,8 +54,8 @@ pipeline{
 
                 stage('Deploy to k8s'){
                     steps{
-                        sh "kubectl  --kubeconfig=/home/jeff/config.yaml delete -f  jeffsbooks-deployment.yaml -n jeffsbooks"
-                        sh "kubectl  --kubeconfig=/home/jeff/config.yaml apply -f jeffsbooks-deployment.yaml -n jeffsbooks"
+                        sh "kubectl  --kubeconfig=/home/jeff/config_element.yaml delete -f  jeffsbooks-deployment.yaml -n jeffsbooks"
+                        sh "kubectl  --kubeconfig=/home/jeff/config_element.yaml apply -f jeffsbooks-deployment.yaml -n jeffsbooks"
 
                      }
                 }
