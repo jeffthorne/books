@@ -18,14 +18,14 @@ COPY Pipfile Pipfile.lock ./
 RUN apk --update add python3-dev gcc libc-dev libressl-dev
 RUN pip install pipenv 
 RUN pipenv install --deploy --system 
-RUN apk del gcc python3-dev libressl-dev
-RUN pip uninstall pipenv -y
+#RUN apk del gcc python3-dev libressl-dev
+#RUN pip uninstall pipenv -y
 
 
 COPY app /app
 
 
-#RUN pip install PyYAML==5.1b5
+#pipenv install PyYAML==5.3.1
 #RUN pip install PyYAML==3.12
 COPY base.html /app/app/templates/
 
