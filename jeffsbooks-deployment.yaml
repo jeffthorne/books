@@ -17,7 +17,7 @@ spec:
       imagePullSecrets:
         - name: gcr
       containers:
-        - image: jeffthorne/books:latest
+        - image: us.gcr.io/test-bbfc6/jeffsbooks:latest
           name: jeffsbooks
           imagePullPolicy: Always
           env:
