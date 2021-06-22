@@ -15,7 +15,7 @@ spec:
         app: jeffsbooks
     spec:
       imagePullSecrets:
-        - name: dockerhub
+        - name: gcr
       containers:
         - image: jeffthorne/books:latest
           name: jeffsbooks

@@ -15,7 +15,7 @@ CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
 COPY Pipfile Pipfile.lock ./
 
-RUN apk --update add python3-dev gcc libc-dev libressl-dev libevent-dev build-base postgresql-dev
+RUN apk --update add python3-dev gcc libc-dev libressl-dev libevent-dev build-base 
 RUN pip install pipenv 
 RUN pipenv install --deploy --system 
 #RUN apk del gcc python3-dev libressl-dev
@@ -25,7 +25,7 @@ RUN pipenv install --deploy --system
 COPY app /app
 
 
-RUN pipenv install PyYAML==5.3.1
+#RUN pipenv install PyYAML==5.3.1
 #RUN pip install PyYAML==3.12
 COPY base.html /app/app/templates/
 
