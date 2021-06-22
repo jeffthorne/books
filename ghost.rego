@@ -7,16 +7,6 @@ ghost_image_result["policy"] = "ghost-vuln-policy"
 
 
 
-image_violations[reason] {
-    input.critical >= 1
-    reason := sprintf("DENY: critical vulnerabilities[%v] >= 1", [input.critical])
-}
-
-image_violations[reason] {
-    input.high >= 5
-    reason := sprintf("DENY: high vulnerabilities[%v] >= 5", [input.high])
-}
-
 
 image_violations[reason]{
     input.vulnerabilities[_].VulnerabilityID = "CVE-2020-1747"
@@ -24,7 +14,3 @@ image_violations[reason]{
 }
 
 
-image_violations[reason] {
-    input.user == "root"
-    reason := "DENY: image running as root"
-}
