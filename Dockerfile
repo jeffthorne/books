@@ -1,4 +1,5 @@
-FROM python:3.7-slim
+FROM python:3.9-alpine
+
 MAINTAINER Jeff Thorne
 
 #setup env
@@ -14,13 +15,11 @@ CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
 COPY Pipfile Pipfile.lock ./
 
-RUN pip install pipenv && \
-  apt-get update && \
-  apt-get install -y --no-install-recommends gcc python3-dev libssl-dev && \
-  pipenv install --deploy --system && \
-  apt-get remove -y gcc python3-dev libssl-dev && \
-  apt-get autoremove -y && \
-  pip uninstall pipenv -y
+RUN apk --update add python3-dev gcc libc-dev libressl-dev
+RUN pip install pipenv 
+RUN pipenv install --deploy --system 
+RUN apk del gcc python3-dev libressl-dev
+RUN pip uninstall pipenv -y
 
 
 COPY app /app
