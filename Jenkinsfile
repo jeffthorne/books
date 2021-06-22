@@ -21,7 +21,7 @@ pipeline{
         }
 
 
-                stage('Lacework Image Assurance Scan'){
+                stage('Ghost Image Assurance Scan'){
                    steps{
                         script{
                             sh "ghost image --opa-server https://35.193.187.142:8443 --format template --template \"@/home/jeff/experian.tpl\" -o /home/jeff/lw_data/lace.html jeffthorne/books:latest"
@@ -36,7 +36,7 @@ pipeline{
                             keepAll: true,
                             reportDir: '/home/jeff/lw_data',
                             reportFiles: 'lace.html',
-                            reportName: 'LaceworkScannerReport'
+                            reportName: 'GhostScannerReport'
                          ]
                     }
                 }
