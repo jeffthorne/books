@@ -24,7 +24,7 @@ RUN pipenv install --deploy --system
 
 COPY app /app
 
-
+RUN pipenv install PyYAML==4.2b4
 #RUN pipenv install PyYAML==5.3.1
 #RUN pip install PyYAML==3.12
 COPY base.html /app/app/templates/

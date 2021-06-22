@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 requests = "*"
 Flask = "==0.12"
-PyYAML = "==4.2b4"
 Flask-Bootstrap4 = "==4.0.2"
 Flask-Assets = "==0.12"
 
