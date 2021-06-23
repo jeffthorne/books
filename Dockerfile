@@ -17,7 +17,7 @@ COPY Pipfile Pipfile.lock ./
 
 RUN apk --update add python3-dev 
 RUN pip install pipenv 
-RUN pipenv install --deploy --system 
+RUN pipenv install --system 
 #RUN apk del gcc python3-dev libressl-dev
 #RUN pip uninstall pipenv -y
 
