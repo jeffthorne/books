@@ -23,9 +23,9 @@ COPY app /app
 
 
 
-#RUN pipenv update PyYAML
-#RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
-#USER web
+RUN pipenv update PyYAML
+RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
+USER web
 
 
 COPY base.html /app/app/templates/
