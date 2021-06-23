@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 requests = "*"
-Flask = "==0.12"
+Flask = "==0.12.3"
 Flask-Bootstrap4 = "==4.0.2"
 Flask-Assets = "==0.12"
 
