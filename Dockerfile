@@ -23,7 +23,7 @@ COPY app /app
 
 
 
-RUN pipenv update --keep-outdated PyYAML
+RUN pipenv install PyYAML==5.4
 RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
 USER web
 
