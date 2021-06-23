@@ -1,11 +1,11 @@
 import os
 from flask import render_template, request, flash
-from ..models.models import User
+#from ..models.models import User
 from . import main
 #import boto3
 import requests
 
-from .. import db
+#from .. import db
 
 
 
@@ -31,6 +31,7 @@ def login():
 @main.route("/process_login", methods=['POST'])
 def process_login():
     print("yo")
+    """
     if request.values['email'] is not None:
         user = User.query.filter(User.email == request.values['email'], User.password == request.values['password']).first()
 
@@ -39,6 +40,7 @@ def process_login():
         return render_template("main/expansion_plans.html", fl="welcome back Jeff")
     else:
         return render_template("main/login.html", fl="invalid login")
+        """
 
 @main.route('/contact')
 def contact():

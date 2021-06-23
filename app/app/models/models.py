@@ -1,3 +1,4 @@
+"""
 from .. import db
 
 class User(db.Model):
@@ -10,3 +11,5 @@ class User(db.Model):
     last_name = db.Column(db.String(128), nullable=False)
     email = db.Column(db.String(128), nullable=False, unique=True)
     password = db.Column(db.String(64), nullable=False)
+
+    """
