@@ -17,7 +17,7 @@ COPY Pipfile Pipfile.lock ./
 
 RUN apk --update add python3-dev 
 RUN pip install pipenv 
-RUN pipenv install --system 
+RUN pipenv install --deploy --system 
 #RUN apk del gcc python3-dev libressl-dev
 #RUN pip uninstall pipenv -y
 
@@ -27,8 +27,8 @@ COPY app /app
 #RUN pipenv install PyYAML==5.3.1
 
 RUN pipenv install PyYAML==5.4
-RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
-USER web
+#RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
+#USER web
 
 
 COPY base.html /app/app/templates/

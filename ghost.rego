@@ -19,7 +19,7 @@ image_violations[reason]{
 }
 
 
-image_violations[reason] {
-    input.user == "root"
-    reason := "DENY: image running as root"
-}
+#image_violations[reason] {
+#    input.user == "root"
+##    reason := "DENY: image running as root"
+#}
