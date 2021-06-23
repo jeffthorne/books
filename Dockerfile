@@ -23,7 +23,7 @@ COPY app /app
 
 
 
-RUN pipenv update PyYAML
+RUN pipenv update --keep-outdated PyYAML
 RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
 USER web
 
