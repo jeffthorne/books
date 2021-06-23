@@ -14,7 +14,7 @@ pipeline{
 
           stage('Build Docker Image'){
             steps{
-                sh "docker build -t us.gcr.io/test-bbfc6/jeffsbooks:latest ."
+                sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
                 //sh "sleep 4"
                 //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
             }
@@ -24,7 +24,7 @@ pipeline{
                 stage('Ghost Image Assurance Scan'){
                    steps{
                         script{
-                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html us.gcr.io/test-bbfc6/jeffsbooks:latest"
+                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html 192.168.1.41:5000/jeffsbooks:latest"
 
                         }
                     }
@@ -45,7 +45,7 @@ pipeline{
               stage('Push Docker Image to Registry'){
                    steps{
                         script{
-                            sh "docker push us.gcr.io/test-bbfc6/jeffsbooks:latest"
+                            sh "docker push 192.168.1.41:5000/jeffsbooks:latest"
                         }
                     }
               }

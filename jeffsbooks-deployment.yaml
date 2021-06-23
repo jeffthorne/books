@@ -14,10 +14,8 @@ spec:
       labels:
         app: jeffsbooks
     spec:
-      imagePullSecrets:
-        - name: gcr
       containers:
-        - image: us.gcr.io/test-bbfc6/jeffsbooks:latest
+        - image: 192.168.1.41:5000/jeffsbooks:latest
           name: jeffsbooks
           imagePullPolicy: Always
           env:
