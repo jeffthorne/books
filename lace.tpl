@@ -35,7 +35,7 @@
 <div class="row" style="margin-top: 75px">
 <div class="col-md-12">
 <div style="display: inline-block; float: right;margin-top:-20px;margin-right: -20px;">
-    <img src="https://storage.googleapis.com/test888888/lw-logo.png" width="350px" height="175px" />
+    <img src="https://storage.googleapis.com/test888888/lw-logo.png" width="450px" height="90px" />
 </div>
 <h1 style="font-size: 30px" id="target"></h1>
 
