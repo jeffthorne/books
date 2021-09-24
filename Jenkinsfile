@@ -14,7 +14,8 @@ pipeline{
 
           stage('Build Docker Image'){
             steps{
-                sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
+                //sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
+                sh "docker build -t jeffthorne/books:latest ."
                 //sh "sleep 4"
                 //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
             }
@@ -24,7 +25,7 @@ pipeline{
                 stage('Lacework Image Assurance Scan'){
                    steps{
                         script{
-                            sh "lw-scanner image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --webhook http://192.168.1.196:9001/api/webhook 192.168.1.41:5000/jeffsbooks:latest"
+                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --webhook http://192.168.1.196:9001/api/webhook 192.168.1.41:5000/jeffsbooks:latest"
 
                         }
                     }
@@ -45,7 +46,8 @@ pipeline{
               stage('Push Docker Image to Registry'){
                    steps{
                         script{
-                            sh "docker push 192.168.1.41:5000/jeffsbooks:latest"
+                            //sh "docker push 192.168.1.41:5000/jeffsbooks:latest"
+                            sh "docker push jeffthorne/books:latest"
                         }
                     }
               }
