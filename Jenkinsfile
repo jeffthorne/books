@@ -15,7 +15,7 @@ pipeline{
           stage('Build Docker Image'){
             steps{
                 //sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
-                sh "docker build -t jeffthorne/books:latest ."
+                sh "docker build -t 192.168.1.41:5000/books:latest ."
                 //sh "sleep 4"
                 //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
             }
@@ -47,7 +47,7 @@ pipeline{
                    steps{
                         script{
                             //sh "docker push 192.168.1.41:5000/jeffsbooks:latest"
-                            sh "docker push jeffthorne/books:latest"
+                            sh "docker push 192.168.1.41:5000/books:latest"
                         }
                     }
               }
