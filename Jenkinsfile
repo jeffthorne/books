@@ -25,7 +25,7 @@ pipeline{
                 stage('Lacework Image Assurance Scan'){
                    steps{
                         script{
-                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --webhook http://192.168.1.196:9001/api/webhook 192.168.1.41:5000/jeffsbooks:latest"
+                            sh "ghost image --rego-file ${WORKSPACE}/ghost.rego --exit-code 2 --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --webhook http://192.168.1.196:9001/api/webhook 192.168.1.41:5000/jeffsbooks:latest"
 
                         }
                     }
