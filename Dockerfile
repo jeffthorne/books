@@ -23,9 +23,9 @@ COPY app /app
 
 
 
-#RUN pipenv install PyYAML==5.4
-#RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
-#USER web
+RUN pipenv install PyYAML==5.4
+RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
+USER web
 
 
 COPY base.html /app/app/templates/
