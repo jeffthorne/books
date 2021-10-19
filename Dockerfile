@@ -1,6 +1,6 @@
 FROM python:3.9.7-alpine3.14
 
-MAINTAINER Jeff Thorne
+LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
 #setup env
 ENV FLASK_APP=flasky.py
@@ -29,6 +29,5 @@ USER web
 
 
 COPY base.html /app/app/templates/
-
 
 
