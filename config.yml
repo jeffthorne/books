@@ -1,0 +1,18 @@
+static_cache_location: #
+lacework:
+  account_name: customerdemo
+  integration_access_token: _11a1557b2e5635c5f53f7d0572df4c41
+registries:
+  - domain: jeffthorne.jfrog.io
+    name: thorne-jfrog
+    ssl: true
+    auto_poll: false
+    credentials:
+      user_name: jeff.thorne@lacework.net
+      password: Realtime88!
+    notification_type: jfrog
+    scan_non_os_packages: true
+    poll_frequency_minutes: 20
+
+docker run --mount type=bind,source=/home/jeff/cache,target=/opt/lacework/cache -v /home/jeff/config.yml:/opt/lacework/config/config.yml -p 9080:9080 --name lwproxy lacework/lacework-proxy-scanner:latest    
+

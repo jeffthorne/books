@@ -10,14 +10,15 @@ package lacework
     helios_bypass_result["bypass"] =  count(bypass_found) > 0
     helios_bypass_result["reason"] = bypass_found
 
+
     helios_exec_result["allow"] = false
     helios_exec_result["reason"] = "DENY: pod exec prohibited"
 
     # Helios IA violation rule
     # Will fail on any high/critical vulnerabilities found and fixible vulns found > 5.
     image_violations[reason]{
-        to_number(input.high_vulnerabilities) != 0
-        reason := sprintf("DENY: high vulnerabilities[%v] > 0", [input.high_vulnerabilities])
+        to_number(input.medium_vulnerabilities) != 0
+        reason := sprintf("DENY: medium vulnerabilities[%v] > 0", [input.medium_vulnerabilities])
     }
 
     image_violations[reason]{
@@ -31,6 +32,10 @@ package lacework
     }
 
 
+     image_violations[reason]{
+        not input.securityContext.seccompProfile
+        reason := "DENY: seccomp profile not found"
+    }
 
     # Helios bypass criteria rules
     bypass_found[reason]{
