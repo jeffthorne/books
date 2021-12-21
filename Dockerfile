@@ -1,4 +1,4 @@
-FROM python:3.9.7-alpine3.14
+FROM jeffthorne/log4shell-vulnerable-app:v1
 
 LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
