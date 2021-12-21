@@ -9,7 +9,7 @@ ENV FLASK_ENV=default
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 WORKDIR /app
-EXPOSE 8088
+EXPOSE 8089
 ENTRYPOINT ["flask"]
 CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
