@@ -20,7 +20,7 @@ CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
 #RUN pipenv install PyYAML==5.4
 #RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
-#USER web
+#USER web1
 
 
 COPY base.html /app/app/templates/
