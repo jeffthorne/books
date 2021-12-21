@@ -13,21 +13,6 @@ EXPOSE 8088
 ENTRYPOINT ["flask"]
 CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
-COPY Pipfile Pipfile.lock ./
 
-RUN apk --update add python3-dev 
-RUN pip install pipenv 
-RUN pipenv install --deploy --system 
-COPY app /app
-
-
-
-
-#RUN pipenv install PyYAML==5.4
-#RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
-#USER web
-
-
-COPY base.html /app/app/templates/
 
 
