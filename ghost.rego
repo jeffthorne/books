@@ -14,8 +14,18 @@ image_violations[reason] {
 
 
 image_violations[reason]{
-    input.vulnerabilities[_].VulnerabilityID = "CVE-2020-1747"
-    reason := sprintf("DENY: Found CVE [%s] ", ["CVE-2020-1747"])
+    input.vulnerabilities[_].VulnerabilityID = "CVE-2021-44228"
+    reason := sprintf("DENY: Found Log4j CVE [%s] ", ["CVE-2021-44228"])
+}
+
+image_violations[reason]{
+    input.vulnerabilities[_].VulnerabilityID = "CVE-2021-45046"
+    reason := sprintf("DENY: Found Log4j CVE [%s] ", ["CVE-2021-45046"])
+}
+
+image_violations[reason]{
+    input.vulnerabilities[_].VulnerabilityID = "CVE-2021-45105"
+    reason := sprintf("DENY: Found Log4j CVE [%s] ", ["CVE-2021-45105"])
 }
 
 
