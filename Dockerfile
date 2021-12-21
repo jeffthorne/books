@@ -1,4 +1,4 @@
-FROM jeffthorne/log4shell-vulnerable-app:v1
+FROM 192.168.1.41:5000/log4shell-vulnerable-app:v1
 
 LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
