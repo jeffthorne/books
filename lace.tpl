@@ -47,8 +47,10 @@
 <script>
     var scan_result = {{ . | toJson }}
     var logo_url = "https://awsmp-logos.s3.amazonaws.com/5b9daf89-2101-4cd3-b096-bf5bc33b6b4a/d40ea1ecf105eb00d2270bf36dced371.png"
+        var logo_width = "375px";
+    var logo_height = "120px";
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@g3t/pumpkin@0.0.11/pumpkin.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@g3t/pumpkin@0.0.12/pumpkin.min.js"></script>
 </body>
 </html>
