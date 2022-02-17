@@ -17,7 +17,7 @@ pipeline{
                 //sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
                 sh "docker build -t 192.168.1.41:5000/jeffsbooks:latest ."
                 //sh "sleep 4"
-                //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml"
+                //sh "python3 /home/jeff/update_sha.py ${WORKSPACE}/jeffsbooks-deployment.yaml" 
             }
         }
 
