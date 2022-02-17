@@ -1,0 +1,21 @@
+static_cache_location: /home/jeff/cache
+lacework:
+  account_name: purestorage
+  integration_access_token: 
+registries:
+  - domain: jthorne.jfrog.io
+    name: pstg-docker-official-local
+    ssl: true
+    credentials:
+      user_name: 
+      password: 
+    poll_frequency_minutes: 20
+    scan_non_os_packages: false
+  - domain: g3t.jfrog.io
+    name: harbormaster-docker-local
+    ssl: true
+    credentials:
+      user_name: 
+      password: 
+    poll_frequency_minutes: 20
+    scan_non_os_packages: false
