@@ -1,8 +1,12 @@
 Flask==0.12
+Flask-Assets==0.12
+Flask-Bootstrap4
 PyYAML==4.2b4
 netifaces==0.10.6
 gunicorn==19.7.1
 sqreen==1.13.4
 boto3
 requests
+
+
 

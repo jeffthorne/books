@@ -15,24 +15,9 @@ spec:
         app: jeffsbooks
     spec:
       containers:
-        - image: 192.168.1.41:5000/jeffsbooks:latest
+        - image: jeffthorne/books:latest
           name: jeffsbooks
-          imagePullPolicy: Always
-          env:
-            - name: POSTGRES_HOST
-              value: 10.72.6.150
-            - name: FLASK_ENV
-              value: production
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-config
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: postgres-config
-                  key: POSTGRES_PASSWORD
+          imagePullPolicy: Alwaysg
           ports:
             - containerPort: 8088
               name: flask

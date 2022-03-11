@@ -3,7 +3,7 @@ FROM python:3.9.7-alpine3.14
 LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
 #setup env
-ENV FLASK_APP=flasky.py
+ENV FLASK_APP=app.py
 ENV FLASK_DEBUG=1
 ENV FLASK_ENV=default
 ENV LC_ALL=C.UTF-8
@@ -24,7 +24,7 @@ COPY app /app
 #USER web
 
 
-COPY base.html /app/app/templates/
+COPY base.html /app/templates/
 
 
 
