@@ -1,6 +1,7 @@
 package lacework
 
 
+
     # currently helios expects these results objects to take these names and format.
     # will become more flexible in the future
     helios_image_result["allowed"] =  count(image_violations) == 0

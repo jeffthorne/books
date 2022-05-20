@@ -17,7 +17,7 @@ spec:
       containers:
         - image: jeffthorne/books:latest
           name: jeffsbooks
-          imagePullPolicy: Alwaysg
+          imagePullPolicy: Always
           ports:
             - containerPort: 8088
               name: flask
