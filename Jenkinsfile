@@ -20,7 +20,7 @@ pipeline{
         stage('Lacework Image Assurance Scan'){
             steps{
                 script{
-                    sh "lw-scanner image --rego-file ${WORKSPACE}/ghost.rego --exit-code 2 --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --api http://10.48.7.192:7007/api/scan jeffthorne/books:latest"
+                    sh "lw-scanner image --rego-file ${WORKSPACE}/ghost.rego --exit-code 2 --format template --template \"@${WORKSPACE}/lace.tpl\" -o /home/jeff/lw_data/lace.html --tags \"jenkins-build-${BUILD_NUMBER}\" --api http://g3t.dev/api/scan jeffthorne/books:latest"
                 }
             }
             
