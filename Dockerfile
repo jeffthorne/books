@@ -1,13 +1,31 @@
-FROM node:gallium-buster-slim
+FROM python:3.11.0a6-bullseye
 
-#node:16-alpine
-#node:gallium-buster-slim
+LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
-WORKDIR /jeffsbooks
+#setup env
+ENV FLASK_APP=app.py
+ENV FLASK_DEBUG=1
+ENV FLASK_ENV=default
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+WORKDIR /app
 EXPOSE 8088
-CMD [ "node", "--experimental-modules", "server.mjs"]
-COPY package.json /jeffsbooks
-RUN yarn docker
+ENTRYPOINT ["flask"]
+CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
+
+COPY Pipfile Pipfile.lock ./
+RUN apk --update add python3-dev 
+RUN pip install pipenv 
+RUN pipenv install --deploy --system 
+COPY app /app
+
+#RUN pipenv install PyYAML==5.4
+#RUN addgroup -g 1000 -S web && adduser -u 1000 -S web -G web
+#USER web
 
 
-COPY . .
+COPY base.html /app/templates/
+
+
+
+
