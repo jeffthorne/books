@@ -15,7 +15,7 @@ ENTRYPOINT ["flask"]
 CMD ["run", "--host", "0.0.0.0", "--port", "8088"]
 
 COPY Pipfile Pipfile.lock ./
-RUN apk --update add python3-dev 
+# apk --update add python3-dev 
 RUN pip install pipenv 
 RUN pipenv install --deploy --system 
 COPY app /app
