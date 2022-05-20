@@ -1,4 +1,5 @@
-FROM python:3.11.0a6-bullseye
+FROM python:3.7
+
 
 LABEL maintainer="Jeff Thorne jeff.thorne@lacework.net"
 
