@@ -1,6 +1,6 @@
 FROM node:gallium-buster-slim
 
-#node:16-alpine
+#node:16-alpined
 #node:gallium-buster-slim
 
 WORKDIR /jeffsbooks
